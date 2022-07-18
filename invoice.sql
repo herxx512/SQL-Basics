@@ -33,3 +33,11 @@ WHERE invoice_id = 5;
 -- 10 (This caused an error because this action violates the foreign key constraints)
 DELETE FROM invoice
 WHERE invoice_id = 1;
+
+-- So Do the Below First:
+DELETE FROM invoice_line
+WHERE invoice_id = 1;
+
+-- And then
+DELETE FROM invoice
+WHERE invoice_id = 1;
